@@ -1,13 +1,18 @@
 //Change bindingSize for different sized grids
 let bindingSize = 8;
-let stringFirst = " #";
-let stringSecond = "# ";
+let grid = "";
 
-for (let number = bindingSize++; number > 0; number--){
-    // modulus % is used differentiate between even and uneven numbered rows
-    if(number % 2 == 0){
-        console.log(stringFirst.repeat(bindingSize/2))
-    }else{
-        console.log(stringSecond.repeat(bindingSize/2))
+for (let number1 = 0; number1 < bindingSize; number1++){
+    // modulus % is used to see if row+column is even or uneven thus alternates between " " and "#"
+    console.log(number1);
+    for (let number2 = 0; number2 < bindingSize; number2++){
+        if((number1+number2) % 2 == 0){
+            grid +=" ";
+        }else{
+            grid +="#";
+        }
     }
+    // when a row is finished breaks for a new row
+    grid +="\n"
 }
+console.log(grid);
